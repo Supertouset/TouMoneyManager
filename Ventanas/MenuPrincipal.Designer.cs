@@ -44,9 +44,10 @@
             // lvGastosRecurrentes
             // 
             lvGastosRecurrentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            lvGastosRecurrentes.Location = new Point(12, 27);
+            lvGastosRecurrentes.BackColor = Color.FromArgb(98, 102, 88);
+            lvGastosRecurrentes.Location = new Point(12, 29);
             lvGastosRecurrentes.Name = "lvGastosRecurrentes";
-            lvGastosRecurrentes.Size = new Size(150, 332);
+            lvGastosRecurrentes.Size = new Size(177, 330);
             lvGastosRecurrentes.TabIndex = 0;
             lvGastosRecurrentes.UseCompatibleStateImageBehavior = false;
             lvGastosRecurrentes.View = View.List;
@@ -54,38 +55,41 @@
             // btnAddGasto
             // 
             btnAddGasto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAddGasto.BackColor = Color.FromArgb(164, 186, 114);
             btnAddGasto.Location = new Point(12, 365);
             btnAddGasto.Name = "btnAddGasto";
-            btnAddGasto.Size = new Size(150, 34);
+            btnAddGasto.Size = new Size(177, 34);
             btnAddGasto.TabIndex = 1;
             btnAddGasto.Text = "Agregar nuevo gasto";
-            btnAddGasto.UseVisualStyleBackColor = true;
+            btnAddGasto.UseVisualStyleBackColor = false;
             btnAddGasto.Click += btnAddGasto_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(150, 15);
+            label1.Size = new Size(177, 17);
             label1.TabIndex = 2;
             label1.Text = "Lista de Gastos Recurrentes";
             // 
             // btnEditarGasto
             // 
             btnEditarGasto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnEditarGasto.BackColor = Color.FromArgb(164, 186, 114);
             btnEditarGasto.Location = new Point(12, 405);
             btnEditarGasto.Name = "btnEditarGasto";
-            btnEditarGasto.Size = new Size(150, 34);
+            btnEditarGasto.Size = new Size(177, 34);
             btnEditarGasto.TabIndex = 3;
             btnEditarGasto.Text = "Editar un gasto";
-            btnEditarGasto.UseVisualStyleBackColor = true;
+            btnEditarGasto.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label2.AutoSize = true;
-            label2.BackColor = Color.PaleGreen;
+            label2.BackColor = Color.FromArgb(97, 101, 87);
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
@@ -99,10 +103,10 @@
             // 
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label3.Location = new Point(584, 370);
             label3.Name = "label3";
-            label3.Size = new Size(93, 17);
+            label3.Size = new Size(99, 17);
             label3.TabIndex = 5;
             label3.Text = "Mensualmente";
             // 
@@ -110,10 +114,10 @@
             // 
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label4.Location = new Point(584, 395);
             label4.Name = "label4";
-            label4.Size = new Size(76, 17);
+            label4.Size = new Size(83, 17);
             label4.TabIndex = 6;
             label4.Text = "Anualmente";
             // 
@@ -121,10 +125,10 @@
             // 
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             label5.Location = new Point(584, 345);
             label5.Name = "label5";
-            label5.Size = new Size(93, 17);
+            label5.Size = new Size(99, 17);
             label5.TabIndex = 7;
             label5.Text = "Semanalmente";
             // 
@@ -162,6 +166,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(160, 186, 160);
             ClientSize = new Size(804, 451);
             Controls.Add(label8);
             Controls.Add(label7);
