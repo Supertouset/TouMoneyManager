@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Prueba" }, -1, Color.PaleTurquoise, Color.Empty, new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0));
             lvGastosRecurrentes = new ListView();
+            Cantidad = new ColumnHeader();
+            Concepto = new ColumnHeader();
             btnAddGasto = new Button();
             label1 = new Label();
             btnEditarGasto = new Button();
@@ -45,17 +48,30 @@
             // 
             lvGastosRecurrentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lvGastosRecurrentes.BackColor = Color.FromArgb(98, 102, 88);
+            lvGastosRecurrentes.Columns.AddRange(new ColumnHeader[] { Cantidad, Concepto });
+            lvGastosRecurrentes.Items.AddRange(new ListViewItem[] { listViewItem1 });
             lvGastosRecurrentes.Location = new Point(12, 29);
             lvGastosRecurrentes.Name = "lvGastosRecurrentes";
             lvGastosRecurrentes.Size = new Size(177, 330);
             lvGastosRecurrentes.TabIndex = 0;
             lvGastosRecurrentes.UseCompatibleStateImageBehavior = false;
-            lvGastosRecurrentes.View = View.List;
+            lvGastosRecurrentes.View = View.Details;
+            // 
+            // Cantidad
+            // 
+            Cantidad.Text = "Cantidad";
+            Cantidad.Width = 70;
+            // 
+            // Concepto
+            // 
+            Concepto.Text = "Concepto";
+            Concepto.Width = 100;
             // 
             // btnAddGasto
             // 
             btnAddGasto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnAddGasto.BackColor = Color.FromArgb(164, 186, 114);
+            btnAddGasto.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnAddGasto.Location = new Point(12, 365);
             btnAddGasto.Name = "btnAddGasto";
             btnAddGasto.Size = new Size(177, 34);
@@ -78,6 +94,7 @@
             // 
             btnEditarGasto.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnEditarGasto.BackColor = Color.FromArgb(164, 186, 114);
+            btnEditarGasto.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnEditarGasto.Location = new Point(12, 405);
             btnEditarGasto.Name = "btnEditarGasto";
             btnEditarGasto.Size = new Size(177, 34);
@@ -201,5 +218,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
+        private ColumnHeader Cantidad;
+        private ColumnHeader Concepto;
     }
 }
