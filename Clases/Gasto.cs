@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TouMoneyManager.Clases
 {
-    class Gasto
+    public class Gasto
     {
         private string concepto;
         private double cantidad;

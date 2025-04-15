@@ -28,79 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
+            btnCargar = new Button();
+            btnCancelar = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbConcepto = new TextBox();
+            tbCategoria = new TextBox();
             label2 = new Label();
-            lblCantidad = new TextBox();
+            tbCantidad = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            cmbPeriodicidad = new ComboBox();
             cmbDivisa = new ComboBox();
             SuspendLayout();
             // 
-            // button1
+            // btnCargar
             // 
-            button1.Location = new Point(12, 381);
-            button1.Name = "button1";
-            button1.Size = new Size(142, 57);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnCargar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnCargar.BackColor = Color.FromArgb(164, 186, 114);
+            btnCargar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCargar.Location = new Point(12, 182);
+            btnCargar.Name = "btnCargar";
+            btnCargar.Size = new Size(142, 57);
+            btnCargar.TabIndex = 0;
+            btnCargar.Text = "Cargar/Cambiar";
+            btnCargar.UseVisualStyleBackColor = false;
+            btnCargar.Click += btnCargar_Click;
             // 
-            // button2
+            // btnCancelar
             // 
-            button2.Location = new Point(160, 381);
-            button2.Name = "button2";
-            button2.Size = new Size(142, 57);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.FromArgb(164, 186, 114);
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnCancelar.Location = new Point(160, 182);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(142, 57);
+            btnCancelar.TabIndex = 1;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label1.Location = new Point(12, 30);
             label1.Name = "label1";
-            label1.Size = new Size(84, 15);
+            label1.Size = new Size(88, 15);
             label1.TabIndex = 2;
             label1.Text = "Nombre Gasto";
             // 
-            // textBox1
+            // tbConcepto
             // 
-            textBox1.Location = new Point(102, 27);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(200, 23);
-            textBox1.TabIndex = 3;
+            tbConcepto.BackColor = Color.FromArgb(105, 122, 105);
+            tbConcepto.Location = new Point(106, 27);
+            tbConcepto.Name = "tbConcepto";
+            tbConcepto.Size = new Size(196, 23);
+            tbConcepto.TabIndex = 3;
             // 
-            // textBox2
+            // tbCategoria
             // 
-            textBox2.Location = new Point(102, 56);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 23);
-            textBox2.TabIndex = 5;
+            tbCategoria.BackColor = Color.FromArgb(105, 122, 105);
+            tbCategoria.Location = new Point(106, 56);
+            tbCategoria.Name = "tbCategoria";
+            tbCategoria.Size = new Size(196, 23);
+            tbCategoria.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label2.Location = new Point(12, 59);
             label2.Name = "label2";
-            label2.Size = new Size(43, 15);
+            label2.Size = new Size(60, 15);
             label2.TabIndex = 4;
-            label2.Text = "Origen";
+            label2.Text = "Categoría";
             // 
-            // lblCantidad
+            // tbCantidad
             // 
-            lblCantidad.Location = new Point(102, 85);
-            lblCantidad.Name = "lblCantidad";
-            lblCantidad.Size = new Size(88, 23);
-            lblCantidad.TabIndex = 7;
+            tbCantidad.BackColor = Color.FromArgb(105, 122, 105);
+            tbCantidad.Location = new Point(106, 85);
+            tbCantidad.Name = "tbCantidad";
+            tbCantidad.Size = new Size(101, 23);
+            tbCantidad.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label3.Location = new Point(12, 88);
             label3.Name = "label3";
             label3.Size = new Size(55, 15);
@@ -110,65 +124,74 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             label4.Location = new Point(12, 117);
             label4.Name = "label4";
-            label4.Size = new Size(73, 15);
+            label4.Size = new Size(75, 15);
             label4.TabIndex = 8;
             label4.Text = "Periodicidad";
             // 
-            // comboBox1
+            // cmbPeriodicidad
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(102, 114);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(200, 23);
-            comboBox1.TabIndex = 9;
+            cmbPeriodicidad.BackColor = Color.FromArgb(105, 122, 105);
+            cmbPeriodicidad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPeriodicidad.FormattingEnabled = true;
+            cmbPeriodicidad.Items.AddRange(new object[] { "Semanal", "Mensual", "Anual" });
+            cmbPeriodicidad.Location = new Point(106, 114);
+            cmbPeriodicidad.Name = "cmbPeriodicidad";
+            cmbPeriodicidad.Size = new Size(196, 23);
+            cmbPeriodicidad.TabIndex = 9;
             // 
             // cmbDivisa
             // 
+            cmbDivisa.BackColor = Color.FromArgb(105, 122, 105);
+            cmbDivisa.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDivisa.FormattingEnabled = true;
             cmbDivisa.Items.AddRange(new object[] { "Euros", "Dólares" });
-            cmbDivisa.Location = new Point(196, 85);
+            cmbDivisa.Location = new Point(213, 85);
             cmbDivisa.Name = "cmbDivisa";
-            cmbDivisa.Size = new Size(106, 23);
+            cmbDivisa.Size = new Size(89, 23);
             cmbDivisa.TabIndex = 10;
             // 
             // vtnNuevoGasto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(314, 450);
+            BackColor = Color.FromArgb(160, 186, 160);
+            ClientSize = new Size(314, 251);
+            ControlBox = false;
             Controls.Add(cmbDivisa);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbPeriodicidad);
             Controls.Add(label4);
-            Controls.Add(lblCantidad);
+            Controls.Add(tbCantidad);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(tbCategoria);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(tbConcepto);
             Controls.Add(label1);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnCargar);
+            MaximumSize = new Size(330, 290);
+            MinimumSize = new Size(330, 290);
             Name = "vtnNuevoGasto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "vtnNuevoGasto";
-            Load += vtnNuevoGasto_Load;
+            Text = "Agregar/Editar un gasto";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btnCargar;
+        private Button btnCancelar;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbConcepto;
+        private TextBox tbCategoria;
         private Label label2;
-        private TextBox lblCantidad;
+        private TextBox tbCantidad;
         private Label label3;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox cmbPeriodicidad;
         private ComboBox cmbDivisa;
     }
 }

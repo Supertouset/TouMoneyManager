@@ -1,3 +1,5 @@
+using TouMoneyManager.Clases;
+
 namespace TouMoneyManager
 {
     public partial class MenuPrincipal : Form
@@ -26,8 +28,34 @@ namespace TouMoneyManager
 
         private void btnAddGasto_Click(object sender, EventArgs e)
         {
-            vtnNuevoGasto nuevoGasto = new vtnNuevoGasto();
-            nuevoGasto.ShowDialog();
+            Gasto gasto;
+            vtnNuevoGasto vtnNuevoGasto;
+
+            if (lvGastosRecurrentes.SelectedItems.Count == 1)
+            {
+                ListViewItem item = lvGastosRecurrentes.SelectedItems[0];
+                gasto = (Gasto)item.Tag;
+                vtnNuevoGasto = new vtnNuevoGasto("Modificar", gasto);
+            }
+            else
+            {
+                gasto = new Gasto("", 0, DateTime.Now, "", "");
+                vtnNuevoGasto = new vtnNuevoGasto("Crear", gasto);
+            }
+
+            vtnNuevoGasto.ShowDialog();
+            gasto = vtnNuevoGasto.GastoResult;
+
+            if (gasto != null)
+            {
+                ListViewItem item = new ListViewItem(gasto.Concepto);
+                item.SubItems.Add(gasto.Cantidad.ToString());
+                item.SubItems.Add(gasto.FechaInicio.ToShortDateString());
+                item.SubItems.Add(gasto.Categoria);
+                item.SubItems.Add(gasto.Frecuencia);
+                item.Tag = gasto;
+                lvGastosRecurrentes.Items.Add(item);
+            }
         }
     }
 }

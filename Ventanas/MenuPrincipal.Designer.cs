@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "Prueba" }, -1, Color.PaleTurquoise, Color.Empty, new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0));
             lvGastosRecurrentes = new ListView();
-            Cantidad = new ColumnHeader();
             Concepto = new ColumnHeader();
             btnAddGasto = new Button();
             label1 = new Label();
@@ -42,25 +40,21 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
+            Cantidad = new ColumnHeader();
             SuspendLayout();
             // 
             // lvGastosRecurrentes
             // 
             lvGastosRecurrentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             lvGastosRecurrentes.BackColor = Color.FromArgb(98, 102, 88);
-            lvGastosRecurrentes.Columns.AddRange(new ColumnHeader[] { Cantidad, Concepto });
-            lvGastosRecurrentes.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            lvGastosRecurrentes.Columns.AddRange(new ColumnHeader[] { Concepto, Cantidad });
             lvGastosRecurrentes.Location = new Point(12, 29);
+            lvGastosRecurrentes.MultiSelect = false;
             lvGastosRecurrentes.Name = "lvGastosRecurrentes";
             lvGastosRecurrentes.Size = new Size(177, 330);
             lvGastosRecurrentes.TabIndex = 0;
             lvGastosRecurrentes.UseCompatibleStateImageBehavior = false;
             lvGastosRecurrentes.View = View.Details;
-            // 
-            // Cantidad
-            // 
-            Cantidad.Text = "Cantidad";
-            Cantidad.Width = 70;
             // 
             // Concepto
             // 
@@ -110,7 +104,7 @@
             label2.BorderStyle = BorderStyle.FixedSingle;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlText;
-            label2.Location = new Point(584, 296);
+            label2.Location = new Point(582, 320);
             label2.Name = "label2";
             label2.Size = new Size(210, 39);
             label2.TabIndex = 4;
@@ -121,7 +115,7 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label3.Location = new Point(584, 370);
+            label3.Location = new Point(582, 394);
             label3.Name = "label3";
             label3.Size = new Size(99, 17);
             label3.TabIndex = 5;
@@ -132,7 +126,7 @@
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label4.Location = new Point(584, 395);
+            label4.Location = new Point(582, 419);
             label4.Name = "label4";
             label4.Size = new Size(83, 17);
             label4.TabIndex = 6;
@@ -143,7 +137,7 @@
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            label5.Location = new Point(584, 345);
+            label5.Location = new Point(582, 369);
             label5.Name = "label5";
             label5.Size = new Size(99, 17);
             label5.TabIndex = 7;
@@ -153,7 +147,7 @@
             // 
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(745, 347);
+            label6.Location = new Point(743, 371);
             label6.Name = "label6";
             label6.Size = new Size(13, 15);
             label6.TabIndex = 8;
@@ -163,7 +157,7 @@
             // 
             label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label7.AutoSize = true;
-            label7.Location = new Point(745, 372);
+            label7.Location = new Point(743, 396);
             label7.Name = "label7";
             label7.Size = new Size(13, 15);
             label7.TabIndex = 9;
@@ -173,11 +167,15 @@
             // 
             label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label8.AutoSize = true;
-            label8.Location = new Point(745, 397);
+            label8.Location = new Point(743, 421);
             label8.Name = "label8";
             label8.Size = new Size(13, 15);
             label8.TabIndex = 10;
             label8.Text = "0";
+            // 
+            // Cantidad
+            // 
+            Cantidad.Width = 70;
             // 
             // MenuPrincipal
             // 
@@ -218,7 +216,7 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private ColumnHeader Cantidad;
         private ColumnHeader Concepto;
+        private ColumnHeader Cantidad;
     }
 }
